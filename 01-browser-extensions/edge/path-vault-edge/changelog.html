@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>应用级密码库 - 版本记录</title>
+  <style>
+    body { margin: 0; background: #f4f6f8; color: #1f2937; font: 14px/1.7 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif; }
+    main { max-width: 860px; margin: 0 auto; padding: 28px 22px 60px; }
+    h1 { margin: 0 0 6px; font-size: 24px; }
+    .sub { margin: 0 0 24px; color: #64748b; }
+    section { margin-bottom: 18px; padding: 16px 18px; border: 1px solid #dbe2ea; border-radius: 10px; background: #fff; }
+    h2 { margin: 0 0 10px; font-size: 18px; color: #1d4ed8; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin: 4px 0; }
+    code { padding: 1px 4px; border-radius: 4px; background: #eef2f7; }
+    .tip { padding: 10px 12px; border-radius: 8px; background: #eff6ff; color: #1e40af; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>应用级密码库 - 版本记录</h1>
+  <p class="sub">每个版本的主要改动如下。</p>
+  <section><h2>0.4.2</h2><ul><li>增加完整版本记录文件 <code>CHANGELOG.md</code>。</li><li>增加插件内版本记录页面。</li><li>插件弹窗增加“版本记录”入口。</li></ul></section>
+  <section><h2>0.4.1</h2><ul><li>增强非标准登录按钮识别。</li><li>支持 <code>登 录</code> 这种带空格的文字。</li><li>支持 <code>li.login-submit</code>、<code>div</code>、<code>span</code> 等非标准登录控件。</li><li>解决部分系统点击登录后没有触发记录的问题。</li></ul></section>
+  <section><h2>0.4.0</h2><ul><li>增加类似 Edge 密码管理器的待提交凭据缓存。</li><li>输入或 Edge 默认填充后先暂存，提交或跳转后再正式保存。</li><li>降低密码框被清空或页面立即跳转导致记录失败的概率。</li></ul></section>
+  <section><h2>0.3.8</h2><ul><li>每次页面加载时确认内容脚本已经注入。</li><li>提高 Edge 默认填充后记录账号密码的成功率。</li></ul></section>
+  <section><h2>0.3.7</h2><ul><li>支持记录 Edge 默认填充后提交的账号密码。</li><li>同一用户名已存在时，优先保留插件内保存的密码。</li><li>自动填充后增加二次确认，避免被 Edge 默认填充覆盖。</li><li>增加鼠标按下阶段捕获，尽量在密码框被清空前记录。</li></ul></section>
+  <section><h2>0.3.6</h2><ul><li>缓存最近一次输入的账号密码。</li><li>解决提交前密码框被清空导致无法保存的问题。</li></ul></section>
+  <section><h2>0.3.5</h2><ul><li>增加后台直接检测和填充能力。</li><li>第一次填充失败后会自动重试。</li><li>提高老系统和延迟渲染页面的填充成功率。</li></ul></section>
+  <section><h2>0.3.4</h2><ul><li>点击“填充”后自动关闭插件弹窗。</li><li>点击“重新自动填充”后自动关闭插件弹窗。</li></ul></section>
+  <section><h2>0.3.3</h2><ul><li>修复页面已经预填时插件跳过自动填充的问题。</li><li>插件保存的账号密码优先于 Edge 默认填充。</li></ul></section>
+  <section><h2>0.3.2</h2><ul><li>增加登录后 60 秒自动填充冷却。</li><li>只对登录类页面自动填充。</li><li>减少登录后页面转圈和循环加载。</li></ul></section>
+  <section><h2>0.3.1</h2><ul><li>增加“重新自动填充”。</li><li>增加“检测当前页面”和“复制检测结果”。</li><li>增加“暂停所有页面自动填充”。</li><li>弹窗显示当前版本号。</li></ul></section>
+  <section><h2>0.3.0</h2><ul><li>新应用默认开启“提交时记录”。</li><li>默认开启浏览器重启后自动解锁。</li><li>本机保存不可导出的 CryptoKey，用于自动解锁。</li></ul></section>
+  <section><h2>0.2.x</h2><ul><li>新增打开登录页自动填充。</li><li>新增同一应用多账号选择。</li><li>新增默认账号设置。</li><li>增强 iframe、about:blank、非标准密码框和自定义登录按钮识别。</li><li>移除高频 DOM 监听，降低页面卡死概率。</li></ul></section>
+  <section><h2>0.1.0</h2><ul><li>首个 Edge Manifest V3 插件版本。</li><li>按 URL 第一层路径区分不同应用。</li><li>AES-256-GCM 加密，PBKDF2-SHA256 派生密钥。</li><li>支持手动记录、填充、删除、同步和加密备份。</li></ul></section>
+  <p class="tip">完整版本记录也保存在插件目录的 <code>CHANGELOG.md</code> 文件中。</p>
+</main>
+</body>
+</html>
+
