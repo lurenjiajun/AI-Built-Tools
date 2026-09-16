@@ -3,12 +3,12 @@
 这是一个面向 Edge 的 Manifest V3 浏览器扩展。它解决的问题不是“记录某个 IP 和端口”，而是：
 
 - 同一个主机和端口后面有多个应用，例如：
-  - `http://120.220.38.207:8888/TPBidderCS`
-  - `http://120.220.38.207:8888/TPFrameCS/customframe4bid/login_TP`
+  - `https://your-host:port/TPBidderCS`
+  - `https://your-host:port/TPFrameCS/customframe4bid/login_TP`
 - 扩展会把第一个 URL 路径层级作为应用标识：
-  - `http://120.220.38.207:8888/TPBidderCS`
-  - `http://120.220.38.207:8888/TPFrameCS`
-- 因此同一个 IP:8888 下不同应用的账号密码可以分开保存和自动填充。
+  - `https://your-host:port/TPBidderCS`
+  - `https://your-host:port/TPFrameCS`
+- 因此同一个主机和端口下不同应用的账号密码可以分开保存和自动填充。
 
 ## 安全模型
 
@@ -33,7 +33,7 @@ Edge 的“加载解压缩的扩展”只能选择**文件夹**，不能选择 `
 4. 点击“加载解压缩的扩展”。
 5. 选择这个文件夹，不是选择 zip：
    ```text
-   D:\AISkill\path-vault-edge
+   插件目录（该目录下应直接包含 manifest.json）
    ```
 6. 选择后，Edge 应该能直接看到 `manifest.json`。
 7. 建议刷新已经打开的业务页面，让内容脚本生效。
@@ -53,7 +53,7 @@ Edge 的“加载解压缩的扩展”只能选择**文件夹**，不能选择 `
 ### 自动记录
 
 1. 解锁扩展。
-2. 打开目标应用，例如 `http://120.220.38.207:8888/TPBidderCS/...`。
+2. 打开目标应用登录页。
 3. 勾选“提交时记录本应用”。
 4. 输入账号密码并提交。
 5. 扩展会把凭据加密保存到当前应用标识下。
@@ -129,6 +129,8 @@ Edge 的“加载解压缩的扩展”只能选择**文件夹**，不能选择 `
 - `background.js`：加密、解密、同步、自动锁定、条目管理。
 - `content.js`：识别登录表单、按需记录、填充。
 - `popup.html` / `popup.css` / `popup.js`：用户界面。
+
+
 
 
 
